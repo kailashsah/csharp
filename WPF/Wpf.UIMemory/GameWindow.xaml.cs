@@ -38,7 +38,6 @@ namespace Wpf.UIMemory
             Debug.WriteLine($"Deconstruction {_windowIndex}", GetType().Name);
         }
 
-        //public int WindowIndex => _windowIndex;
 
         public void Methodx()
         {
@@ -53,7 +52,8 @@ namespace Wpf.UIMemory
         private void Window_Closed(object sender, EventArgs e)
         {
             //DataContext = this; // give binding error of WindowIndex property
-            DataContext = null;
+            ((UserControl)this.Content).DataContext = null;
+            //DataContext = null;
         }
     }
     /// <summary>

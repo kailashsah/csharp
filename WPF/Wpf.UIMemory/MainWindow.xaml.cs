@@ -31,9 +31,13 @@ namespace Wpf.UIMemory
             counter++;
 
             GameWindow gameWin = new GameWindow(counter);
+            GameTableControl gameCtrl = new GameTableControl(counter);
             GameWindowVM gameVM = new GameWindowVM();
-            gameWin.DataContext = gameVM;            
+            //gameWin.DataContext = gameVM;            
+            gameCtrl.DataContext = gameVM;
             gameVM.WindowIndex = counter;
+
+            gameWin.Content = gameCtrl;
             gameWin.Show();
           
 

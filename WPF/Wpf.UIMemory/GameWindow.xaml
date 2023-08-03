@@ -17,9 +17,6 @@
             <RowDefinition/>
             
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding WindowIndex, UpdateSourceTrigger=Default}"
-            HorizontalAlignment="Center"
-            Grid.Row="1"
-                   />
+       
     </Grid>
 </Window>
