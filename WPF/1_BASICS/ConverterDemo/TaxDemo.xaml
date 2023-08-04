@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="ConverterDemo.TaxDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ConverterDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:HotelTaxConverter x:Key="hotelTaxConverter" />
+        <local:TaxConverter
+            x:Key="taxConverter"
+            x:Shared="false"
+            Discount="10" />
+        <local:TaxConverter x:Key="groceryTaxConverter" Discount="5" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="30*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Hotel:" />
+        <TextBox
+            x:Name="hotelSales"
+            Grid.Column="1"
+            VerticalAlignment="Top" />
+        <TextBlock Grid.Column="2" Text="18%" />
+        <TextBlock Grid.Column="3" Text="{Binding Path=Text, ElementName=hotelSales, Mode=TwoWay, Converter={StaticResource taxConverter}, ConverterParameter=18}" />
+
+        <TextBlock Grid.Row="1" Text="Grocery:" />
+        <TextBox
+            x:Name="grocery"
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Top" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            Text="9%" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="{Binding Path=Text, ElementName=grocery, Mode=TwoWay, Converter={StaticResource groceryTaxConverter}, ConverterParameter=9}" />
+    </Grid>
+</UserControl>
