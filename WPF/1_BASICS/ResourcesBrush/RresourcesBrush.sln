@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RresourcesBrush", "RresourcesBrush.csproj", "{8368FB7E-3D9C-4D43-B51B-3F2E0A724748}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8368FB7E-3D9C-4D43-B51B-3F2E0A724748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8368FB7E-3D9C-4D43-B51B-3F2E0A724748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8368FB7E-3D9C-4D43-B51B-3F2E0A724748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8368FB7E-3D9C-4D43-B51B-3F2E0A724748}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53920A27-9430-424C-BAAE-B8AEEA49F319}
+	EndGlobalSection
+EndGlobal
