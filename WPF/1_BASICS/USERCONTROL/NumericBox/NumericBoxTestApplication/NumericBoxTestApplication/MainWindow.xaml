@@ -1,0 +1,21 @@
+﻿<Window x:Class="NumericBoxTestApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:nb="clr-namespace:NumericBox;assembly=NumericBox"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary Source="/NumericBoxTestApplication;component/Styles/Style.xaml">
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <nb:NumericBox x:Name="nb" Value="10.50000" ValueFormat="0.000" Increment="0.5" Minimum="-100" 
+                       Maximum="100" ValueChanged="NumericBox_ValueChanged"
+                       Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Orange"/>
+        
+        <TextBlock Text="{Binding ElementName=nb, Path=Value}" Margin="5"/>
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFUserControl", "WPFUserControl.csproj", "{FC96DEB8-3E5E-41E1-A2C2-81E5086D8C1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC96DEB8-3E5E-41E1-A2C2-81E5086D8C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC96DEB8-3E5E-41E1-A2C2-81E5086D8C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC96DEB8-3E5E-41E1-A2C2-81E5086D8C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC96DEB8-3E5E-41E1-A2C2-81E5086D8C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB57AB84-A40B-4E8E-A733-ABA907640522}
+	EndGlobalSection
+EndGlobal
