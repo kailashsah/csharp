@@ -1,0 +1,60 @@
+﻿<Window x:Class="ElementName.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElementName"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<Grid>--> <!--</Grid>-->
+    <!--0-->
+    <!--<StackPanel>
+        <Button Content="submit" Width="400" Height="40" Background="LightBlue"></Button>
+        <TextBox x:Name="t1" Width="200" Height="40" Background="YellowGreen"></TextBox>
+        <TextBox  Text="{Binding Text, ElementName=t1, Mode=OneWay}" Width="200" Height="40" Background="LightCoral" ></TextBox>
+
+
+    </StackPanel>-->
+   
+    
+     <!--1-->
+    <!--<UniformGrid Rows="2" Columns="3">
+        <Rectangle Fill="Red" Height="100" Stroke="Black" Width="100"/>
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" Width="100"/>
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" Width="100"/>
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" Width="100"/>
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" Width="100"/>
+        <Rectangle Fill="#FFF4F4F5" Height="100" Stroke="Black" Width="100"/>
+    </UniformGrid>-->
+    
+    <!--2-->
+    <UniformGrid Rows="2" Columns="3">
+        <Viewbox Stretch="UniformToFill">
+            <!--<Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />-->
+            <TextBox Width="500" Height="40" Text=" dfsf"/>
+        </Viewbox>
+        <Viewbox Stretch="Fill">
+            <Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />
+        </Viewbox>
+        <Viewbox Stretch="Uniform">
+            <Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />
+        </Viewbox>
+        <Viewbox Stretch="Uniform">
+            <Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />
+        </Viewbox>
+        <Viewbox Stretch="Uniform">
+            <Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />
+        </Viewbox>
+        <Viewbox Stretch="Uniform">
+            <Rectangle Height="100" Width="100" Fill="#FFF4F4F5" Stroke="Black" />
+        </Viewbox>
+    </UniformGrid>
+
+    <!--3-->
+    <!--<UniformGrid Margin="2" Grid.Row="0"  Name="Board" Background="LightYellow"  Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" >
+        <Rectangle Fill="AliceBlue"/>
+        <Rectangle Fill="LightCoral" />
+        <Rectangle Fill="LightCyan"/>
+    </UniformGrid>-->
+
+</Window>
