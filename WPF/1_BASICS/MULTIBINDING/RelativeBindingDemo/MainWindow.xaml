@@ -1,0 +1,30 @@
+﻿<Window
+    x:Class="BindingDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BindingDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Relative Source Demo"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d"
+    xmlns:my="clr-namespace:BindingDemo">
+	
+    
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <my:RelativeSourceView Grid.Row="0" />
+        <my:StringFormatAndMultiBinding  Grid.Row="1"/>
+        
+        
+    </Grid>
+</Window>
