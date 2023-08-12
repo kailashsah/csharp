@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prism.Container.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Prism.Ioc.IServiceCollectionExtensions">
+            <summary>
+            Adds extensions for <see cref="T:Prism.Ioc.IContainerRegistry" /> to use <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />
+            </summary>
+        </member>
+        <member name="M:Prism.Ioc.IServiceCollectionExtensions.RegisterServices(Prism.Ioc.IContainerRegistry,System.Action{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Registers services with the Container using the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />
+            </summary>
+            <param name="containerRegistry">The <see cref="T:Prism.Ioc.IContainerRegistry" /></param>
+            <param name="registerServices">The <see cref="T:System.Action" /> to perform on the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+            <returns></returns>
+        </member>
+        <member name="M:Prism.Ioc.IServiceProviderExtensions.CreateServiceProvider(Prism.Ioc.IContainerExtension,Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Creates a <see cref="T:System.IServiceProvider" /> using the underlying Container
+            </summary>
+            <param name="container">The <see cref="T:Prism.Ioc.IContainerExtension" /></param>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to register with the container</param>
+            <returns>The <see cref="T:System.IServiceProvider" /></returns>
+        </member>
+    </members>
+</doc>

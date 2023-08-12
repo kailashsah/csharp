@@ -1,0 +1,25 @@
+﻿<Window x:Class="prism_basic.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prism_basic"
+        xmlns:prism="http://www.codeplex.com/prism"
+        mc:Ignorable="d"
+        Title="Shell" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ItemsControl prism:RegionManager.RegionName="Person" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" />
+        <ItemsControl prism:RegionManager.RegionName="PersonDetails" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        
+    </Grid>
+</Window>
