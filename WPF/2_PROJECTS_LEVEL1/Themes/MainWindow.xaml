@@ -11,15 +11,15 @@
     </Window.Resources>
     
     
-    <Grid Background="{StaticResource Backdrop}">
+    <Grid Background="{DynamicResource Backdrop}">
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="Dark Theme"  Click="DarkTheme_Click" />
                 <MenuItem Header="Light Theme" Click="LightTheme_Click" />
             </ContextMenu>
         </Grid.ContextMenu>
-        
-        <Grid Height="200" Width="140" Background="{StaticResource Card}">
+
+        <Grid Height="200" Width="140" Background="{DynamicResource Card}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -27,11 +27,11 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="CLIENT" FontWeight="Light" Foreground="{StaticResource Text}" />
-            
-            <TextBlock Text="DEPARTMENT" Grid.Row="4" FontWeight="Regular" Foreground="{StaticResource Text}" />
+            <TextBlock Text="CLIENT" FontWeight="Light" Foreground="{DynamicResource Text}" />
 
-            <TextBlock Text="COMPANY"  VerticalAlignment="Bottom" Grid.Row="5" FontWeight="Bold" Foreground="{StaticResource Text}" />
+            <TextBlock Text="DEPARTMENT" Grid.Row="4" FontWeight="Regular" Foreground="{DynamicResource Text}" />
+
+            <TextBlock Text="COMPANY"  VerticalAlignment="Bottom" Grid.Row="5" FontWeight="Bold" Foreground="{DynamicResource Text}" />
             
         </Grid>
 
