@@ -1,0 +1,42 @@
+﻿<Window x:Class="TransformsDemo.toggleBtn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformsDemo"
+        mc:Ignorable="d"
+        Title="toggleBtn" Height="450" Width="800">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}">
+                <Setter Property="Background" Value="Purple"/>
+                <Style.Triggers>
+                    <Trigger Property="IsChecked" Value="true">
+
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="(ToggleButton.Background).(SolidColorBrush.Color)" To="Yellow" Duration="0:0:1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+
+                        <Trigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="(ToggleButton.Background).(SolidColorBrush.Color)" To="Green" Duration="0:0:1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.ExitActions>
+                        
+                        
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+
+        <ToggleButton x:Name="MyToggleButton" Content="Toggle" Height="23" HorizontalAlignment="Left" Margin="400,72,0,0"  VerticalAlignment="Top" Width="75">
+
+        </ToggleButton>
+    </Grid>
+</Window>

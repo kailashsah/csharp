@@ -1,0 +1,58 @@
+﻿<Window x:Class="TransformsDemo.fillBehavior"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformsDemo"
+        mc:Ignorable="d"
+        Title="fillBehavior" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <Border Background="#99FFFFFF">
+                <TextBlock Margin="20">
+               example
+                </TextBlock>
+            </Border>
+
+            <TextBlock>FillBehavior="Deactivate"</TextBlock>
+            <Rectangle Name="deactiveAnimationRectangle" Width="20" Height="20" Fill="#AA3333FF" HorizontalAlignment="Left" >
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <!-- The animated rectangle's width reverts back to its non-animated value
+                   after the animation ends. -->
+                                <DoubleAnimation               Storyboard.TargetName="deactiveAnimationRectangle" 
+                Storyboard.TargetProperty="Width" 
+                From="100" To="400" Duration="0:0:2" FillBehavior="Stop" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+
+            <TextBlock Margin="0,20,0,0">FillBehavior="HoldEnd"</TextBlock>
+            
+            <Rectangle Name="holdEndAnimationRectangle" Width="20" Height="20" Fill="#AA3333FF" HorizontalAlignment="Left" >
+                <Rectangle.Triggers>
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <!-- The animated rectangle's width remains at its end value after the 
+                   animation ends. -->
+                                <DoubleAnimation Storyboard.TargetName="holdEndAnimationRectangle" 
+                Storyboard.TargetProperty="Width"  
+                From="100" To="400" Duration="0:0:2" FillBehavior="HoldEnd" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Rectangle.Triggers>
+            </Rectangle>
+            
+            
+            
+        </StackPanel>
+    </Grid>
+</Window>

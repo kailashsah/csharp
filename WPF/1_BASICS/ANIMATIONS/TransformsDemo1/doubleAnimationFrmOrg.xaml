@@ -1,0 +1,80 @@
+﻿<Window x:Class="TransformsDemo.doubleAnimationFrmOrg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformsDemo"
+        mc:Ignorable="d"
+        Title="doubleAnimationFrmOrg" Height="450" Width="800">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1" >
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle1" RepeatBehavior="Forever"  FillBehavior="HoldEnd" >                
+            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-36" />
+            <!--<SplineDoubleKeyFrame KeyTime="0:0:1" Value="-36" />-->
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle1" RepeatBehavior="Forever"  FillBehavior="HoldEnd">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-46" />
+            </DoubleAnimationUsingKeyFrames>
+
+            <DoubleAnimationUsingKeyFrames x:Name="angleAni" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="rectangle1"  
+                                  RepeatBehavior="Forever"   
+                                  FillBehavior="HoldEnd">
+                <!--AutoReverse="True"-->
+                <!--RepeatBehavior="Forever"-->
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="359.484" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0 20 0 0"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Width" Value="100"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Storyboard1}" x:Name="abc"  />
+
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.Triggers>
+        <!--<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+        </EventTrigger>-->
+    </Window.Triggers>
+    <Grid>
+        <Rectangle Height="100" HorizontalAlignment="Left" Margin="84,82,0,0" Name="rectangle1" Stroke="Black" VerticalAlignment="Top" Width="200" Fill="#FDFFFF0D" RenderTransformOrigin="0.5,0.5">
+
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="344,72,0,0" Name="button1" VerticalAlignment="Top" Width="75"  >
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+                </EventTrigger>
+
+                <!--<EventTrigger RoutedEvent="Page.Unloaded" >
+                    <EventTrigger.Actions>
+                        <RemoveStoryboard BeginStoryboardName="abc" />
+                    </EventTrigger.Actions>
+                </EventTrigger>-->
+
+            </Button.Triggers>
+        </Button>
+    </Grid>
+</Window>

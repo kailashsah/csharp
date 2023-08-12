@@ -1,0 +1,30 @@
+﻿<Window x:Class="TransformsDemo.renderTranform"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransformsDemo"
+        mc:Ignorable="d"
+        Title="renderTranform" Height="450" Width="800">
+    <StackPanel>
+        <Button Content="Example"
+                HorizontalAlignment="Left"
+                Margin="150"
+                VerticalAlignment="Top"
+                Width="75"
+                Background="Salmon"
+                Foreground="White"
+            RenderTransformOrigin=".5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="2" ScaleY="2"/>
+                    <!--<SkewTransform AngleX="30" AngleY="0"/>-->
+                   
+                    <!--<RotateTransform Angle="90"/>-->
+                    
+                    <!--<TranslateTransform X="80" Y="100"/>-->
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </StackPanel>
+</Window>
