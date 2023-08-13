@@ -1,0 +1,15 @@
+﻿<Window x:Class="ChannelViewers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChannelViewers" 
+        xmlns:Views="clr-namespace:ChannelViewers.Views" xmlns:viewmodels="clr-namespace:ChannelViewers.ViewModels"        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="500">
+    <Grid>
+        <Views:ViewersView />     
+
+        <!--<Views:Page1 /> InvalidOperationException: Page can have only Window or Frame as parent.-->
+    </Grid>
+</Window>
