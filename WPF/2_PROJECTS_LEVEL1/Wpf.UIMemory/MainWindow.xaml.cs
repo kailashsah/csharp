@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +30,13 @@ namespace Wpf.UIMemory
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
+            //Thread th = new Thread(ThreadMethod);
+            //th.IsBackground = false;
+            //th.Start();
+            ThreadMethod();
+            Trace.WriteLine(child.ToString());
+            //
+            
             counter++;
 
             GameWindow gameWin = new GameWindow(counter);
@@ -39,8 +48,43 @@ namespace Wpf.UIMemory
 
             gameWin.Content = gameCtrl;
             gameWin.Show();
-          
 
+            if (counter == 4)
+            {
+                childlist.Clear();
+            }
+        }
+
+       
+
+        Child child;
+        List<Child> childlist = new List<Child>();
+
+        public void ThreadMethod()
+        {
+            Parent obj = new Parent();
+            child = obj.child;
+            childlist.Add(obj.child);
+            obj = null;
         }
     }
+
+    #region memleak
+    public class Parent
+    {
+        public Child child = new Child();
+        ~Parent()
+        {
+            Trace.WriteLine("Parent dtor");
+        }
+    }
+
+    public class Child
+    {
+        ~Child()
+        {
+            Trace.WriteLine("Child dtor");
+        }
+    }
+    #endregion
 }
