@@ -72,19 +72,34 @@ namespace Wpf.UIMemory
     #region memleak
     public class Parent
     {
+        private static int counter = 0;
+        public int instancePos;
         public Child child = new Child();
+        public Parent()
+        {
+            counter++;
+            this.instancePos = counter;
+            child.Counter = instancePos;
+        }
         ~Parent()
         {
-            Trace.WriteLine("Parent dtor");
+            Trace.WriteLine($"Parent dtor : {this.instancePos}");
         }
     }
 
     public class Child
     {
+        private int counter;
+        public Child()
+        {
+            
+        }
         ~Child()
         {
-            Trace.WriteLine("Child dtor");
+            Trace.WriteLine($"Child dtor : {Counter}");
         }
+
+        public int Counter { get => counter; set => counter = value; }
     }
     #endregion
 }
