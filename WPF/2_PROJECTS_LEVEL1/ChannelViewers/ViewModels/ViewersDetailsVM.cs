@@ -11,7 +11,7 @@ namespace ChannelViewers.ViewModels
     public class ViewersDetailsVM: ViewModelBase
     {
         private readonly SelectedViewerStore _selectedViewerStore;
-        private ChannelViewer SelectedViewer => _selectedViewerStore.SelectedViewer;
+        private Models.ChannelViewer SelectedViewer => _selectedViewerStore.SelectedViewer;
 
         public bool HasSelectedViewer => SelectedViewer != null;
         public string Username => SelectedViewer?.Username ?? "Unknown";

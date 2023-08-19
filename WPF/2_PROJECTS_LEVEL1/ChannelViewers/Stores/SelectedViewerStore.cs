@@ -9,9 +9,9 @@ namespace ChannelViewers.Stores
 {
     public class SelectedViewerStore
     {
-        private ChannelViewer _channelViewer;
+        private Models.ChannelViewer _channelViewer;
 
-        public ChannelViewer SelectedViewer
+        public Models.ChannelViewer SelectedViewer
         {
             get { return _channelViewer; }
             set { 

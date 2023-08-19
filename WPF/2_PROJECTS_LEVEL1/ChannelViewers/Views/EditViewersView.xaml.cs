@@ -14,18 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ChannelViewers.Components
+namespace ChannelViewers.Views
 {
     /// <summary>
-    /// Interaction logic for ViewersDetails.xaml
+    /// Interaction logic for EditViewersView.xaml
     /// </summary>
-    public partial class ViewersDetails : UserControl
+    public partial class EditViewersView : UserControl
     {
-        public ViewersDetails()
+        public EditViewersView()
         {
             InitializeComponent();
         }
-        ~ViewersDetails()
+
+        ~EditViewersView()
         {
             Trace.WriteLine("dtor", this.GetType().Name);
         }

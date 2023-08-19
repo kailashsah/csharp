@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,17 +16,18 @@ using System.Windows.Shapes;
 namespace ChannelViewers.Components
 {
     /// <summary>
-    /// Interaction logic for ViewersDetails.xaml
+    /// Interaction logic for ViewersListingItem.xaml
     /// </summary>
-    public partial class ViewersDetails : UserControl
+    public partial class ViewersListingItem : UserControl
     {
-        public ViewersDetails()
+        public ViewersListingItem()
         {
             InitializeComponent();
         }
-        ~ViewersDetails()
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Trace.WriteLine("dtor", this.GetType().Name);
+            dropdown.IsOpen = false;
         }
     }
 }

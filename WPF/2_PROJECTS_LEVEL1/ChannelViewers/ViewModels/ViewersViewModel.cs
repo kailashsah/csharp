@@ -1,4 +1,5 @@
-﻿using ChannelViewers.Stores;
+﻿using ChannelViewers.NewFolder.Command;
+using ChannelViewers.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,12 @@ namespace ChannelViewers.ViewModels
         public ViewersListingVM ViewersListingVM { get; set; }
         public ViewersDetailsVM ViewersDetailsVM { get; set; }
         public ICommand AddViewersCommand { get; }
-        public ViewersViewModel(SelectedViewerStore _selectedViewerStore)
+        public ViewersViewModel(AddViewerStore addViewerStore, SelectedViewerStore selectedViewerStore, ModalNavigationStore modalNavigationStore)
         {
-            ViewersListingVM = new ViewersListingVM(_selectedViewerStore);
-            ViewersDetailsVM = new ViewersDetailsVM(_selectedViewerStore);
-        
+            ViewersListingVM = new ViewersListingVM(addViewerStore, selectedViewerStore, modalNavigationStore);
+            ViewersDetailsVM = new ViewersDetailsVM(selectedViewerStore);
+
+            AddViewersCommand = new AddCommand(addViewerStore, modalNavigationStore);
         }
     }
 }

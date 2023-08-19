@@ -17,15 +17,15 @@ using System.Windows.Shapes;
 namespace ChannelViewers.Components
 {
     /// <summary>
-    /// Interaction logic for ViewersDetails.xaml
+    /// Interaction logic for ViewersDetailsForm.xaml
     /// </summary>
-    public partial class ViewersDetails : UserControl
+    public partial class ViewersDetailsForm : UserControl
     {
-        public ViewersDetails()
+        public ViewersDetailsForm()
         {
             InitializeComponent();
         }
-        ~ViewersDetails()
+        ~ViewersDetailsForm()
         {
             Trace.WriteLine("dtor", this.GetType().Name);
         }

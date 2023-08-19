@@ -30,7 +30,7 @@
                         <Style TargetType="Grid">
                             <Setter Property="Visibility" Value="Collapsed"/>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding HasSelectedViewer}" Value="False" >
+                                <DataTrigger Binding="{Binding HasSelectedViewer}" Value="True" >
                                     <Setter Property="Visibility" Value="Visible"/>
                                 </DataTrigger>
                             </Style.Triggers>

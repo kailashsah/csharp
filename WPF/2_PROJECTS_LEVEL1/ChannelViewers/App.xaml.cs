@@ -15,16 +15,24 @@ namespace ChannelViewers
     /// </summary>
     public partial class App : Application
     {
+        private readonly ModalNavigationStore _modalNavigationStore;
         private readonly SelectedViewerStore _selectedViewerStore;
+        private readonly AddViewerStore _addViewerStore;
         public App()
         {
             _selectedViewerStore = new SelectedViewerStore();
+            _addViewerStore = new AddViewerStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
+            ModalNavigationStore _modalNavigationStore = new ModalNavigationStore();
+            ViewersViewModel viewersViewModel = new ViewersViewModel(
+                _addViewerStore,
+                _selectedViewerStore, 
+                _modalNavigationStore);
             MainWindow = new MainWindow()
             {
-                DataContext = new ViewersViewModel(_selectedViewerStore)
+                DataContext = new MainWindowVM(_modalNavigationStore, viewersViewModel)
             };
             MainWindow.Show();
 

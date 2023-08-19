@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\ViewersDetailsForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\ViewersListingItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddViewersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditViewersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,7 +33,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\ViewersDetailsForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\ViewersListingItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddViewersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditViewersView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Page1.xaml">

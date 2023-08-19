@@ -4,12 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChannelViewers" 
-        xmlns:Views="clr-namespace:ChannelViewers.Views" xmlns:viewmodels="clr-namespace:ChannelViewers.ViewModels"        
+        xmlns:Views="clr-namespace:ChannelViewers.Views" 
+        xmlns:vms="clr-namespace:ChannelViewers.ViewModels" 
+        xmlns:viewmodels="clr-namespace:ChannelViewers.ViewModels" 
+        xmlns:custom="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vms:AddViewersVM}">
+            <Views:AddViewersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:EditViewersVM}">
+            <Views:EditViewersView />
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
-        <Views:ViewersView />     
+        <Views:ViewersView  DataContext="{Binding ViewersViewModel}"/>
+        <custom:Modal IsOpen="{Binding IsModalOpen}">
+            <ContentPresenter Content="{Binding CurrentViewModel}"  >
+            </ContentPresenter>
+        </custom:Modal>
 
+        <!--<Views:AddViwersView />-->
         <!--<Views:Page1 /> InvalidOperationException: Page can have only Window or Frame as parent.-->
     </Grid>
 </Window>
