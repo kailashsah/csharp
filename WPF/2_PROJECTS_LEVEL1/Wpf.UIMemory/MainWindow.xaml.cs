@@ -33,8 +33,8 @@ namespace Wpf.UIMemory
             //Thread th = new Thread(ThreadMethod);
             //th.IsBackground = false;
             //th.Start();
-            ThreadMethod();
-            Trace.WriteLine(child.ToString());
+            MethodMemLeak();
+           
             //
             
             counter++;
@@ -60,12 +60,12 @@ namespace Wpf.UIMemory
         Child child;
         List<Child> childlist = new List<Child>();
 
-        public void ThreadMethod()
+        public void MethodMemLeak()
         {
             Parent obj = new Parent();
             child = obj.child;
             childlist.Add(obj.child);
-            obj = null;
+            obj = null;  // not req
         }
     }
 
