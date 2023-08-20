@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Simple.Filters;
 using WebApplication1.Filters;
 
 namespace WebApplication1.Controllers
@@ -37,6 +38,7 @@ namespace WebApplication1.Controllers
             }
         }
 
+        [ExAsyncFilter]
         [HttpGet("{find}")]
         public ActionResult GetStudentQuery(int stu)
         {
