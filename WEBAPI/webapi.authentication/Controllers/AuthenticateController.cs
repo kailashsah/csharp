@@ -28,6 +28,7 @@ namespace WebApplication1.webapi.two.Controllers
             this.roleManager = roleManager;
             this.configuration = configuration;
         }
+        
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register(RegisterModel model)
@@ -78,6 +79,7 @@ namespace WebApplication1.webapi.two.Controllers
             }
             return Ok(new Response { Status="Success", Message= "Successfully created" });
         }
+        
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -113,6 +115,13 @@ namespace WebApplication1.webapi.two.Controllers
             }
             return Unauthorized();
             
+        }
+        
+        [HttpGet]
+        public ActionResult AllUsers()
+        {
+            var users = userManager.Users;
+            return Ok(users.Select(m => m.UserName).ToList());
         }
         private IActionResult StatusCode()
         {

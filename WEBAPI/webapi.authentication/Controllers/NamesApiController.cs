@@ -17,13 +17,15 @@ namespace WebApplication1.webapi.two.Controllers
     public class NamesApiController : ControllerBase
     {
         private readonly string [] arr = { "a", "b" };
+        
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return arr.ToList();
         }
+        
+        
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        //
         //[ApiKeyAuth]
         [HttpGet("{id}")]
         public string GetAtIndex(int index)
