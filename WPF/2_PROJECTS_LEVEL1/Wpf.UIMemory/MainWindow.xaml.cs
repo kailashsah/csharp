@@ -22,6 +22,7 @@ namespace Wpf.UIMemory
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Parent obj = new Parent(); // case 2.
         private int counter = 0;
         public MainWindow()
         {
@@ -33,10 +34,10 @@ namespace Wpf.UIMemory
             //Thread th = new Thread(ThreadMethod);
             //th.IsBackground = false;
             //th.Start();
-            MethodMemLeak();
-           
+            MethodMemLeak(); // case 1.
+
             //
-            
+
             counter++;
 
             GameWindow gameWin = new GameWindow(counter);
@@ -51,11 +52,14 @@ namespace Wpf.UIMemory
 
             if (counter == 4)
             {
-                childlist.Clear();
+                childlist.Clear(); // case 1. // free up the child objects
             }
+
+            //obj.child = null; // case 2. // if child got free if parent is still occupied
+
         }
 
-       
+
 
         Child child;
         List<Child> childlist = new List<Child>();
@@ -65,7 +69,7 @@ namespace Wpf.UIMemory
             Parent obj = new Parent();
             child = obj.child;
             childlist.Add(obj.child);
-            obj = null;  // not req
+            obj = null;  // not req ; free up parent objects
         }
     }
 
