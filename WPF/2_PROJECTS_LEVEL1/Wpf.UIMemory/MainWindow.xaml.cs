@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -23,46 +24,47 @@ namespace Wpf.UIMemory
     public partial class MainWindow : Window
     {
         //Parent obj = new Parent(); // case 2.
-        private int counter = 0;
+     
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
+                
         }
+
+        private int counter = 0;
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             //Thread th = new Thread(ThreadMethod);
             //th.IsBackground = false;
             //th.Start();
-            MethodMemLeak(); // case 1.
-
             //
-
-            counter++;
-
-            GameWindow gameWin = new GameWindow(counter);
-            GameTableControl gameCtrl = new GameTableControl(counter);
-            GameWindowVM gameVM = new GameWindowVM();
-            //gameWin.DataContext = gameVM;            
-            gameCtrl.DataContext = gameVM;
-            gameVM.WindowIndex = counter;
-
-            gameWin.Content = gameCtrl;
-            gameWin.Show();
-
+            MethodMemLeak(); // case 1.
+            // 
+          
+            // 
             if (counter == 4)
             {
                 childlist.Clear(); // case 1. // free up the child objects
             }
 
             //obj.child = null; // case 2. // if child got free if parent is still occupied
-
         }
 
+        
+
+        private void FreeMemory_Click(object sender, RoutedEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
 
 
         Child child;
         List<Child> childlist = new List<Child>();
+
 
         public void MethodMemLeak()
         {
@@ -71,6 +73,7 @@ namespace Wpf.UIMemory
             childlist.Add(obj.child);
             obj = null;  // not req ; free up parent objects
         }
+       
     }
 
     #region memleak

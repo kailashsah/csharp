@@ -9,10 +9,23 @@
     <StackPanel>
         <TextBlock Height="40" />
         <Button x:Name="OpenButton"
+                    Command="{Binding OpenCommand}"
                     Content="Open Table"
                     Width="100"
                     Height="40"
                     Click="OpenButton_Click"
                 />
+        <TextBlock Height="10"  />
+        <Button x:Name="FreeMemory"
+                    Content="Free Memory"
+                    Width="100"
+                    Height="40"
+                    Click="FreeMemory_Click"
+                />
+        <WrapPanel>
+            <TextBlock Height="40" Text="Total executed tables:  " HorizontalAlignment="Center" Margin="10"/>
+            <TextBlock Height="40" Text="{Binding Counter}" HorizontalAlignment="Center"/>
+        </WrapPanel>
+        
     </StackPanel>
 </Window>

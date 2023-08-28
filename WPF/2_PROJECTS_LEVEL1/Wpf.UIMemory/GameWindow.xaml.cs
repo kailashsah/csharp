@@ -52,7 +52,7 @@ namespace Wpf.UIMemory
         private void Window_Closed(object sender, EventArgs e)
         {
             //DataContext = this; // give binding error of WindowIndex property
-            ((UserControl)this.Content).DataContext = null;
+            //((UserControl)this.Content).DataContext = null; // correct
             //DataContext = null;
         }
     }
