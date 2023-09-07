@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharpMisc
 {
-    class ImmutableObject
+    public class ImmutableObject
     {
+        public ImmutableObject(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
+
+        public string Name { get; }
+        public int Age { get; }
     }
 }
