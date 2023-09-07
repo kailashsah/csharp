@@ -12,6 +12,10 @@ namespace ConsoleApp.ThreadStatic
         public static void Main(string[] args)
         {
 
+            // 3.
+            //ImmutableObject immObj = new ImmutableObject("Kailash", 38);
+            //immObj.Age = 40; // cannot be assigned to -- readonly
+
             // 2.
             //RunDestructorDemo();
             //RunObjectSize();
