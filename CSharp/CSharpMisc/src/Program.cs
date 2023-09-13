@@ -12,6 +12,7 @@ namespace ConsoleApp.ThreadStatic
 
         public static void Main(string[] args)
         {
+            Misc.RunListToString();
 
             ParallelMethodCall.RunParallelMethodCall();
             // 4.
