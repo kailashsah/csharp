@@ -1,4 +1,5 @@
 ﻿using CSharpMisc;
+using CSharpMisc.src;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -12,6 +13,7 @@ namespace ConsoleApp.ThreadStatic
         public static void Main(string[] args)
         {
 
+            ParallelMethodCall.RunParallelMethodCall();
             // 4.
             //TimeConsumed.RunTimeConsumed();
 
