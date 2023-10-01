@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
+using System;
 using UsingEventAggregator.Core;
 
 namespace ModuleA.ViewModels
@@ -13,7 +14,10 @@ namespace ModuleA.ViewModels
         public string Message
         {
             get { return _message; }
-            set { SetProperty(ref _message, value); }
+            set { 
+                SetProperty(ref _message, value);
+                SendMessageCommand.RaiseCanExecuteChanged();
+            }
         }
 
         public DelegateCommand SendMessageCommand { get; private set; }
@@ -21,7 +25,13 @@ namespace ModuleA.ViewModels
         public MessageViewModel(IEventAggregator ea)
         {
             _ea = ea;
-            SendMessageCommand = new DelegateCommand(SendMessage);
+            SendMessageCommand = new DelegateCommand(SendMessage, CanExecuteMethod);
+            // .ObservesProperty<string>(()=>Message) // is not working
+        }
+
+        private bool CanExecuteMethod()
+        {
+            return !string.IsNullOrEmpty(Message);
         }
 
         private void SendMessage()
