@@ -26,4 +26,14 @@ namespace CSharpMisc
             Console.WriteLine($"Seconds : {span.TotalSeconds}");
         }
     }
+    //public class Program
+    //{
+    //    public static void Main(string[] args)
+    //    {
+    //        // 4.
+    //        TimeConsumed.RunTimeConsumed();
+            
+    //        Console.WriteLine("program ends");
+    //    }
+    //}
 }

@@ -13,7 +13,7 @@ namespace CSharpMisc
     [Serializable]
     public class Base
     {
-        private decimal a = 10m;
+        private decimal a = 10m; // 2 bytes
         private decimal b = 10m;
         private string str = "get the object size";
     }
@@ -21,7 +21,7 @@ namespace CSharpMisc
     [Serializable]
     public class ObjectSize : Base
     {
-        public int i = 40;
+        public int i = 40; // 4 bytes
         private int e = 50;
         protected int f = 60;
         ~ObjectSize()
@@ -37,9 +37,9 @@ namespace CSharpMisc
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(s, this);
-                size = s.Length;
+                size = s.Length; // in bytes
             }
-            Console.WriteLine("ObjectSize class size is :" + size);
+            Console.WriteLine("ObjectSize class size (bytes) is :" + size); // 207
         }
 
         public static void RunObjectSize()
@@ -53,6 +53,8 @@ namespace CSharpMisc
                 obj = null;
             });
             thSize.Start();
+            
+            //end thread
             Console.WriteLine("Type 'exit' for not calling GC");
             while (true)
             {
@@ -65,39 +67,14 @@ namespace CSharpMisc
         }
 
     } //ObjectSize
+    //public class Program
+    //{
+    //    public static void Main(string[] args)
+    //    {
+    //        ObjectSize.RunObjectSize(); //ObjectSize class size is :207
 
+    //        Console.WriteLine("program ends");
+    //    }
+    //}
 
-    class DestructorDemo
-    {
-        public DestructorDemo()
-        {
-            Console.WriteLine("Constructor Object Created");
-        }
-        ~DestructorDemo()
-        {
-            Console.WriteLine($"Object {GetType().Name} is Destroyed");
-        }
-        public static void RunDestructorDemo()
-        {
-            DestructorDemo[] obj1 = new DestructorDemo[10];
-            Thread th = new Thread(() =>
-            {
-                //DestructorDemo[] obj1 = new DestructorDemo[10]; // all elements will be collected
-                for (int i = 0; i < obj1.Length; i++)
-                {
-                    obj1[i] = new DestructorDemo();
-                }
-                DestructorDemo obj2 = new DestructorDemo();
-
-                //obj1 = null; // not allowing elments to go off
-                obj1[0] = null;
-                obj1[1] = null;
-
-                GC.Collect();
-            });
-            th.Start();
-
-            Console.ReadKey();
-        }
-    }
 }

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+/*
+    1. it calls the method instantly without waiting for the last call to complete.
+*/
 namespace CSharpMisc.src
 {
     public class ParallelMethodCall

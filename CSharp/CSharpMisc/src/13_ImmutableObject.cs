@@ -16,5 +16,21 @@ namespace CSharpMisc
 
         public string Name { get; }
         public int Age { get; }
+
     }
+
+    //public class Program
+    //{
+    //    public static void Main(string[] args)
+    //    {
+
+    //        // 3.
+    //        ImmutableObject immObj = new ImmutableObject("Kailash", 38);
+    //        //immObj.Age = 40; // error - cannot be assigned to -- readonly
+            
+    //        Console.WriteLine("program ends");
+    //    }// main
+    //}//class
+
+
 }
