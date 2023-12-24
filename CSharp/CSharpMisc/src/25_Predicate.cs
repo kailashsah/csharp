@@ -10,6 +10,8 @@ using System.Threading.Tasks;
     1. Predicate - Predicate is the delegate like Func and Action delegates. It represents a method containing a set of criteria and checks whether the passed parameter meets those criteria. 
 
         A predicate delegate methods must take one input parameter and return a boolean - true or false.
+    
+    2. Predicate is not a class, it is custom defined delegate in the System namespace.
 
  */
 namespace CSharpMisc

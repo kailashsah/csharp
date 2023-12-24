@@ -34,13 +34,13 @@ namespace CSharpMisc
         }
     };
 
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            new DelegateClass().RunMethod();
-            Console.WriteLine("program ends");
-        }
-    }
+    //public class Program
+    //{
+    //    public static void Main(string[] args)
+    //    {
+    //        new DelegateClass().RunMethod();
+    //        Console.WriteLine("program ends");
+    //    }
+    //}
 
 }
