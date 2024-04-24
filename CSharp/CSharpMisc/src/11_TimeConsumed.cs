@@ -16,7 +16,7 @@ namespace CSharpMisc
             watch.Start();
             // put your code here.
             Thread.Sleep(1000);
-            
+
             watch.Stop();
             TimeSpan span = watch.Elapsed;
 
@@ -32,7 +32,7 @@ namespace CSharpMisc
     //    {
     //        // 4.
     //        TimeConsumed.RunTimeConsumed();
-            
+
     //        Console.WriteLine("program ends");
     //    }
     //}
