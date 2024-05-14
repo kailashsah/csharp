@@ -62,11 +62,11 @@ namespace CSharpMisc
             foreach (int n in arr)
                 Console.Write(n + " "); // 1 1 1 1 1 1 1 1 0 0 0 0 0 0
         }
-        static void Main(String[] args)
-        {
-            RunShiftNumbersAlike();
+        //static void Main(String[] args)
+        //{
+        //    RunShiftNumbersAlike();
 
 
-        }
+        //}
     }
 }
