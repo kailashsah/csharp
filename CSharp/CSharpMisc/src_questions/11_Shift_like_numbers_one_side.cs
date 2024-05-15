@@ -23,8 +23,9 @@ namespace CSharpMisc
             // int[] arr = new int [] {0,1,1,0};
             // int[] arr = new int [] {1,0,0,1};
             // int[] arr = new int [] {1,0,0,1};
-            int h = 0;
-            int t = arr.Length - 1;
+
+            int h = 0;              // head
+            int t = arr.Length - 1; // tail
             int len = arr.Length;
             int temp = 0;
 
