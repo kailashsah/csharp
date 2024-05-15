@@ -31,7 +31,10 @@ namespace CSharpMisc
             int target = 9;
 
             int[] ints = TwoSum(nums, target); // [0, 1]
+            //1.
             Array.ForEach(ints, x => { Console.Write(x + " "); });
+            //2.
+            ints.ToList().ForEach(i => Console.WriteLine(i.ToString()));
 
         }
 
