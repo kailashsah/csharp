@@ -27,15 +27,16 @@ namespace CSharpMisc
         }
         public void RunSumMatchesTarget()
         {
-            int[] nums = { 2, 7, 11, 15 };
+            //int[] nums = { 2, 7, 11, 15 };
+            int[] nums = { 15, 11, 7, 2 };
             int target = 9;
 
             //1.
             int[] ints = TwoSumTwo(nums, target); // faster than other one
             //2. 
             //int[] ints = TwoSumOne(nums, target); // [0, 1]
-            
-            
+            //int[] ints = ArraySort(nums);
+
             //1.
             Array.ForEach(ints, x => { Console.Write(x + " "); });
             Console.WriteLine();
@@ -72,6 +73,13 @@ namespace CSharpMisc
 
             throw new ArgumentException("No two sum solution");
         }
+
+        public int[] ArraySort(int[] nums)
+        {
+            Array.Sort(nums);
+            return nums;
+        }
+
         //static void Main(String[] args)
         //{
         //    new SumOfIndexes().RunSumMatchesTarget();
