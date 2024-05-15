@@ -14,7 +14,7 @@ namespace CSharpMisc
 {
     class SumOfIndexes
     {
-        public int[] TwoSum(int[] nums, int target)
+        public int[] TwoSumOne(int[] nums, int target)
         {
             int prev = 0;
             int i = 0;
@@ -30,14 +30,48 @@ namespace CSharpMisc
             int[] nums = { 2, 7, 11, 15 };
             int target = 9;
 
-            int[] ints = TwoSum(nums, target); // [0, 1]
+            //1.
+            int[] ints = TwoSumTwo(nums, target); // faster than other one
+            //2. 
+            //int[] ints = TwoSumOne(nums, target); // [0, 1]
+            
+            
             //1.
             Array.ForEach(ints, x => { Console.Write(x + " "); });
+            Console.WriteLine();
             //2.
-            ints.ToList().ForEach(i => Console.WriteLine(i.ToString()));
+            ints.ToList().ForEach(i => Console.Write(i.ToString() + " "));
+
+            
+
 
         }
+        public int[] TwoSumTwo(int[] nums, int target)
+        {
 
+            (int num, int index)[] numbers = nums.Select((num, index) => (num, index)).ToArray();
+            Array.Sort(numbers, (a, b) => a.num.CompareTo(b.num));
+            int i = 0, j = nums.Length - 1;
+
+            while (i < j)
+            {
+                int sum = numbers[i].num + numbers[j].num;
+                if (sum == target)
+                {
+                    return new int[] { numbers[i].index, numbers[j].index };
+                }
+                else if (sum < target)
+                {
+                    i++;
+                }
+                else
+                {
+                    j--;
+                }
+            }
+
+            throw new ArgumentException("No two sum solution");
+        }
         //static void Main(String[] args)
         //{
         //    new SumOfIndexes().RunSumMatchesTarget();
