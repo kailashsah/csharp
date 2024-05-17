@@ -16,6 +16,7 @@ namespace CSharpMisc
     {
         public int[] TwoSumOne(int[] nums, int target)
         {
+            // this solution will fail if the array is not sorted.
             int prev = 0;
             int i = 0;
             for (; i < nums.Length; i++)
@@ -25,34 +26,14 @@ namespace CSharpMisc
             }
             return new int[] { i, i + 1 };
         }
-        public void RunSumMatchesTarget()
-        {
-            //int[] nums = { 2, 7, 11, 15 };
-            int[] nums = { 15, 11, 7, 2 };
-            int target = 9;
 
-            //1.
-            int[] ints = TwoSumTwo(nums, target); // faster than other one
-            //2. 
-            //int[] ints = TwoSumOne(nums, target); // [0, 1]
-            //int[] ints = ArraySort(nums);
-
-            //1.
-            Array.ForEach(ints, x => { Console.Write(x + " "); });
-            Console.WriteLine();
-            //2.
-            ints.ToList().ForEach(i => Console.Write(i.ToString() + " "));
-
-            
-
-
-        }
         public int[] TwoSumTwo(int[] nums, int target)
         {
 
             (int num, int index)[] numbers = nums.Select((num, index) => (num, index)).ToArray();
             Array.Sort(numbers, (a, b) => a.num.CompareTo(b.num));
-            int i = 0, j = nums.Length - 1;
+            int i = 0;
+            int j = nums.Length - 1;
 
             while (i < j)
             {
@@ -74,6 +55,28 @@ namespace CSharpMisc
             throw new ArgumentException("No two sum solution");
         }
 
+        public void Run()
+        {
+            // inputs...
+            //int[] nums = { 2, 7, 11, 15 };
+            int[] nums = { 15, 11, 7, 2 };
+            int target = 9;
+
+            //1.
+            int[] ints = TwoSumTwo(nums, target); // faster than other one
+            //2. 
+            //int[] ints = TwoSumOne(nums, target); // [0, 1]
+            //int[] ints = ArraySort(nums);
+
+            //1. print the array
+            Array.ForEach(ints, x => { Console.Write(x + " "); });
+            Console.WriteLine();
+            //2.
+            ints.ToList().ForEach(i => Console.Write(i.ToString() + " "));
+
+        }
+
+
         public int[] ArraySort(int[] nums)
         {
             Array.Sort(nums);
@@ -82,7 +85,7 @@ namespace CSharpMisc
 
         //static void Main(String[] args)
         //{
-        //    new SumOfIndexes().RunSumMatchesTarget();
+        //    new SumOfIndexes().Run();
 
         //}
     }

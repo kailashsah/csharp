@@ -43,7 +43,7 @@ namespace CSharpMisc
                 else
                 {
                     // right side has 0 already
-                    if (arr[t] == 0) // is tail side no is 0
+                    if (arr[t] == 0) // if tail side no is 0
                         t--;
                 }
 
