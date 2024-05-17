@@ -65,17 +65,17 @@ namespace CSharpMisc
 }
 /*
         Constructor Object Created 0
-    Constructor Object Created 1
-    Constructor Object Created 2
-    Constructor Object Created 3
-    Constructor Object Created 4
-    Constructor Object Created 5
-    Constructor Object Created 6
-    Constructor Object Created 7
-    Constructor Object Created 8
-    Constructor Object Created 9
-    Constructor Object Created 10
-    Object DestructorDemo is Destroyed 1
-    Object DestructorDemo is Destroyed 0
-     program ends
+        Constructor Object Created 1
+        Constructor Object Created 2
+        Constructor Object Created 3
+        Constructor Object Created 4
+        Constructor Object Created 5
+        Constructor Object Created 6
+        Constructor Object Created 7
+        Constructor Object Created 8
+        Constructor Object Created 9
+        Constructor Object Created 10
+        Object DestructorDemo is Destroyed 1
+        Object DestructorDemo is Destroyed 0
+        program ends
 */

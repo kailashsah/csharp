@@ -6,6 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 /*
     1. [ThreadStatic] attribute
+
+    2. variable become local to thread object.
  */
 namespace CSharpMisc
 {
