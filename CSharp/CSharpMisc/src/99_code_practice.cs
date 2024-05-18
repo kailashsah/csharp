@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,8 +9,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 /*
-    1.  
-*/
+    1.
+
+ */
 
 namespace CSharpMisc
 {
@@ -18,12 +20,16 @@ namespace CSharpMisc
     {
         public void Run()
         {
-            
+
+
         }
+
 
         //public static void Main(string[] args)
         //{
-        //    new RunTemp123().Run();
+        //    //new RunTemp123().Run();
+           
+
         //    Console.WriteLine("program ends");
         //}
     }
