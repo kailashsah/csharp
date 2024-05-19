@@ -25,13 +25,13 @@ namespace CSharpMisc
             Console.WriteLine(sb.Capacity.ToString()); //18
 
             sb.Replace('a','@', 15, 3);// old char, new char, startindex, count(len of rest of the substring)
-            Console.WriteLine(sb.ToString());// C# is the langu@ge
+            // C# is the langu@ge
 
             sb.Remove(0 ,2 ); //startindex, length
-            Console.WriteLine(sb.ToString());// is the langu@ge
+            // is the langu@ge
 
             sb.Insert(0, "c#");
-            Console.WriteLine(sb.ToString());//c# is the langu@ge
+            //c# is the langu@ge
 
         }
 
