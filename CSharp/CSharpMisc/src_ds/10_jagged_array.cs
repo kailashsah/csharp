@@ -31,6 +31,8 @@ namespace CSharpMisc
             //string[][] sta = new string[3][3]; // error -  Syntax error, ']' expected
 
             string[] starr = new string[] { "a", "b", "c", "d" }; // input str array
+            
+            // make 'a' & 'b' in 2D array, similarly do for 'c' & 'd'
             int counter = 0;
             for (int i = 0; i < starr.Length; i++)
             {
@@ -40,6 +42,7 @@ namespace CSharpMisc
                 sta[counter][1] = starr[i];
                 counter++;
             }
+            // print
             sta.ToList().ForEach(x =>
             {
                 if (x != null) // if more rows given in declaring but objects not given to array
@@ -50,6 +53,7 @@ namespace CSharpMisc
                 */
             });
 
+            // print using for
             for (int i = 0; i < sta.Length - 1; i++)
             {
                 if (sta[i][0] != null)
@@ -57,12 +61,13 @@ namespace CSharpMisc
 
             }
 
+            // print, calling 2D in parameter.
             RunPassArrayAsParam(sta);
         }
 
         void RunPassArrayAsParam(string[][] sta)
         {
-            // if as fn definition -->  RunPassArrayAsParam(string[3][3] sta))
+            // if  fn defined as -->  RunPassArrayAsParam(string[3][3] sta))
             // Error CS0270  Array size cannot be specified in a variable declaration(try initializing with a 'new' expression)
 
             for (int i = 0; i < sta.Length - 1; i++)
@@ -80,7 +85,7 @@ namespace CSharpMisc
             {
                 jagged[i, 0] = new string("a");
                 jagged[i, 1] = new string("b");
-                //jagged[0, 3] = new string("");//index was outside the bound of the array, it is definedas [2,3]
+                //jagged[0, 3] = new string("");//index was outside the bound of the array, it is defined as [2,3]
             }
             for (int i = 0; i < jagged.Length / 2 - 1; i++)
             {
@@ -97,7 +102,7 @@ namespace CSharpMisc
 
             foreach (string[] arr in jagged)
             {
-                Console.WriteLine(string.Join(",", arr));
+                Console.WriteLine(string.Join(",", arr)); // string.Join()
             }
             /*
                 one,two
