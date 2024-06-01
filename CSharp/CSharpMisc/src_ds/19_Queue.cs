@@ -29,14 +29,14 @@ namespace CSharpMisc
                 Console.WriteLine(name);
             }
             //2.
-            Console.WriteLine( names.Contains("Ratan") );
+            Console.WriteLine( names.Contains("Ratan") );//True
 
             //3.
             Console.WriteLine("Peek element: " + names.Peek());
             Console.WriteLine("Dequeue: " + names.Dequeue());
             Console.WriteLine("After Dequeue, Peek element: " + names.Peek());
             /*
-                Sonoo
+                Sonoo 
                 Peter
                 James
                 Ratan
@@ -47,9 +47,9 @@ namespace CSharpMisc
              */
         }
 
-        public static void Main(string[] args)
-        {
-            new QueueExample().Run();
-        }
+        //public static void Main(string[] args)
+        //{
+        //    new QueueExample().Run();
+        //}
     }
 }
