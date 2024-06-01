@@ -37,7 +37,7 @@ namespace CSharpMisc
             {
                 for (int k = 1; k < strs.Length; k++)
                 {
-                    if (i >= strs[k].Length || strs[k][i] != strs[0][i])
+                    if (i >= strs[k].Length || strs[k][i] != strs[0][i]) // false condition where return is OK
                         return strCommon;
                 }//for
                 strCommon += strs[0][i];

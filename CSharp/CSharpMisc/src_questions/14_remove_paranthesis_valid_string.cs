@@ -75,6 +75,7 @@ namespace CSharpMisc
         public void Run()
         {
             string s = MinRemoveToMakeValid("lee(t(c)o)de)");
+
             if (s != "lee(t(c)o)de" && s != "lee(t(co)de)")
             {
                 Console.WriteLine("test failed - return is " + s);
