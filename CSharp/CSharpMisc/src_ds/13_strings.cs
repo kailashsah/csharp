@@ -91,6 +91,7 @@ namespace CSharpMisc
             }
 
             {
+                //get the substring between the spaces
                 string sentence = "c# For c#";
 
                 // Extract the second word.

@@ -42,21 +42,21 @@ namespace CSharpMisc
                 Console.WriteLine($"{ele.Key}, {ele.Value}");
             }
 
-            //using index - access value
+            //3. using index - access value
             Console.WriteLine(dict["a"]); //b
                                           //Console.WriteLine(dict["d"]); //exception - The given key 'd' was not present in the dictionary.'
 
-            //remove all elements
+            //4. remove all elements
             //dict.Clear();
 
-            // remove single element
+            //5. remove single element
             //dict.Remove("a"); // c,d is left 
 
 
             //change the value
             dict["a"] = "bb";
 
-            // ContainsKey() and ConstainsValue()
+            //6. ContainsKey() and ConstainsValue()
             if (dict.ContainsKey("a"))
                 Console.WriteLine("a is present");
 

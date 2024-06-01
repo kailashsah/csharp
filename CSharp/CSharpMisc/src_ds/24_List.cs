@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 /*
     1. C# List<T> class is used to store and fetch elements. It is like a vector<> in c++
@@ -22,22 +23,29 @@ namespace CSharpMisc
             names.Add("Ankit");
             names.Add("Peter");
             names.Add("Irfan");
+            
+            //2. using collection initializer  
+            // List<string> languages = new List<string>() { "Python", "Java" };//in placeinitializer;
 
-            // Iterate list element using foreach loop  
+
+            //3. access randomly
+            Console.WriteLine(names[1]); //Ankit
+            
+            //4. Iterate list element using foreach loop  
             foreach (var name in names)
             {
                 Console.WriteLine(name);
             }
 
-            //2. Create a list of strings using collection initializer  
-            var namess = new List<string>() { "Sonoo", "Vimal", "Ratan", "Love" };
+            //5. insert 
+            names[1] = "Aankit";
 
-            // Iterate through the list.  
-            foreach (var name in namess)
-            {
-                Console.WriteLine(name);
-            }
-        }
+            //6. remove
+            names.Remove("Aankit");
+            names.RemoveAt(1);
+            names.RemoveAll((x) => x.StartsWith('A'));
+            names.Clear();
+        }//Run()
 
         //public static void Main(string[] args)
         //{

@@ -23,11 +23,15 @@ namespace CSharpMisc
             names.Enqueue("Ratan");
             names.Enqueue("Irfan");
 
+            //1.
             foreach (string name in names)
             {
                 Console.WriteLine(name);
             }
+            //2.
+            Console.WriteLine( names.Contains("Ratan") );
 
+            //3.
             Console.WriteLine("Peek element: " + names.Peek());
             Console.WriteLine("Dequeue: " + names.Dequeue());
             Console.WriteLine("After Dequeue, Peek element: " + names.Peek());
@@ -43,9 +47,9 @@ namespace CSharpMisc
              */
         }
 
-        //public static void Main(string[] args)
-        //{
-        //    new QueueExample().Run();
-        //}
+        public static void Main(string[] args)
+        {
+            new QueueExample().Run();
+        }
     }
 }
