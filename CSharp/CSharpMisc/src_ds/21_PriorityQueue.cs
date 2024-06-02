@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace CSharpMisc
 {
-    public class Task //: IComparable<Task>
+    public class TaskAsWork //: IComparable<Task>
     {
         public string Name { get; set; }
         public int Priority { get; set; }
@@ -33,10 +33,10 @@ namespace CSharpMisc
     {
         public void Run()
         {
-            var priorityQueue = new PriorityQueue<Task, int>(10);
-            priorityQueue.Enqueue(new Task { Name = "Task A", Priority = 3 }, 3);
-            priorityQueue.Enqueue(new Task { Name = "Task B", Priority = 2 }, 2);
-            priorityQueue.Enqueue(new Task { Name = "Task C", Priority = 1 }, 1);
+            var priorityQueue = new PriorityQueue<TaskAsWork, int>(10);
+            priorityQueue.Enqueue(new TaskAsWork { Name = "Task A", Priority = 3 }, 3);
+            priorityQueue.Enqueue(new TaskAsWork { Name = "Task B", Priority = 2 }, 2);
+            priorityQueue.Enqueue(new TaskAsWork { Name = "Task C", Priority = 1 }, 1);
 
             //2.
             var tt = priorityQueue.Peek();
