@@ -12,6 +12,9 @@ using System.Threading.Tasks;
     2. When a Parallel.For loop has a small body, it might perform more slowly than the equivalent sequential loop, such as the for loop in C#.
         Slower performance is caused by the overhead involved in partitioning the data and the cost of invoking a delegate on each loop iteration. To address such scenarios, the Partitioner class provides the Partitioner.Create method, which enables you to provide a sequential loop for the delegate body, so that the delegate is invoked only once per partition, instead of once per iteration. 
 
+        By using Partitioner, you can rearrange the workload into chunks and have each parallel invocation work on a slightly larger set. 
+        This will reduce the number of invokes as each invoke will work on a larger set. In my experience this can boost performance significantly when parallelizing very simple operations.
+
     3. It is useful when the loop performs a minimal amount of work. As the work becomes more computationally expensive, you will probably get the same or better performance by using a For or ForEach loop with the default partitioner.
         
         https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/how-to-speed-up-small-loop-bodies
@@ -76,9 +79,9 @@ namespace CSharpMisc
              */
         }//Run()
 
-        static void Main(String[] args)
-        {
-            new PartitionerEx().Run();
-        }
+        //static void Main(String[] args)
+        //{
+        //    new PartitionerEx().Run();
+        //}
     }
 }
