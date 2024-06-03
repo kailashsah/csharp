@@ -21,6 +21,10 @@ namespace CSharpMisc
     {
         public void RunUsingCancellationToken()
         {
+            /*
+             1. you need to provide a shared cancellation indicator that one thread sets and waits while the other thread periodically checks and gracefully exit
+             
+             */
             var ts = new CancellationTokenSource();
             CancellationToken ct = ts.Token;
             Task.Factory.StartNew(() =>
@@ -52,7 +56,8 @@ namespace CSharpMisc
         public void RunCancelWithoutCancellationToken()
         {
             /*
-                I used Task.Run() to show the most common use-case for this - using the comfort of Tasks with old single-threaded code, which does not use the CancellationTokenSource class to determine if it should be canceled or not.
+                1. Aborting a Task is easily possible if you capture the thread in which the task is running in.
+                2. I used Task.Run() to show the most common use-case for this - using the comfort of Tasks with old single-threaded code, which does not use the CancellationTokenSource class to determine if it should be canceled or not.
              */
 
             Thread thread = null;
@@ -87,11 +92,12 @@ namespace CSharpMisc
             Console.Write("Enter : "); Console.ReadKey();
         }
 
-        static void Main(String[] args)
-        {
-            //new TaskCancel().RunCancelWithoutCancellationToken();
-            new TaskCancel().RunUsingCancellationToken();
-        }
+        //static void Main(String[] args)
+        //{
+        //    //new TaskCancel().RunCancelWithoutCancellationToken();
+        //    new TaskCancel().RunUsingCancellationToken();
+        //}
+
     }//class
 }
 
