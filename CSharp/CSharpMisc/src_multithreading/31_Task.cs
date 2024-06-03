@@ -19,7 +19,7 @@ namespace CSharpMisc
     {
         public void RunTaskStart()
         {
-            //1.
+            //...........................................1.
             Task t = new Task(
                    () =>
                    {
@@ -35,7 +35,7 @@ namespace CSharpMisc
             //Wait for finish the Task
             t.Wait();
 
-            //2. 
+            //...........................................2. 
             Action action = () =>
             {
                 System.Threading.Thread.Sleep(1000);
@@ -44,7 +44,7 @@ namespace CSharpMisc
             Task tt = new Task(action);
             tt.Start();
 
-            //3.
+            //...........................................3.
             Task ttt = new Task(delegate ()
             {
 
@@ -54,7 +54,7 @@ namespace CSharpMisc
             });
             ttt.Start();
 
-            //4. status
+            //...........................................4. status
             Console.WriteLine(t.Status); // RanToCompletion.
             Console.WriteLine("Cancelled:- " + t.IsCanceled);
             Console.WriteLine("Completed:- " + t.IsCompleted);
