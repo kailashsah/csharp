@@ -68,7 +68,7 @@ namespace CSharpMisc
         void RunPassArrayAsParam(string[][] sta)
         {
             // if  fn defined as -->  RunPassArrayAsParam(string[3][3] sta))
-            // Error CS0270  Array size cannot be specified in a variable declaration(try initializing with a 'new' expression)
+            // Error CS0270  Array size cannot be specified in a variable declaration (try initializing with a 'new' expression)
 
             for (int i = 0; i < sta.Length - 1; i++)
             {

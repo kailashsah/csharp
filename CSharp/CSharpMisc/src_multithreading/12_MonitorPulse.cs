@@ -8,7 +8,8 @@ using System.Threading;
 using System.Threading.Tasks;
 
 /*
-    1. Monitor with pulse() and wait().
+    1. Monitor with Pulse() --> Wait() --> Exit()
+
     2. https://dotnettutorials.net/lesson/multithreading-using-monitor/
 
 */
