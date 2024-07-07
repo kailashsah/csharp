@@ -44,7 +44,8 @@ namespace CSharpMisc
             // You use += operator to chain delegates together.
             rectDelegate += rect.GetPerimeter;
             Console.WriteLine(rectDelegate.GetType());
-            
+
+            //........................................... calling by invocation list
             Delegate[] InvocationList = rectDelegate.GetInvocationList();
             Console.WriteLine("InvocationList:");
             foreach (var item in InvocationList)
@@ -52,13 +53,16 @@ namespace CSharpMisc
                 Console.WriteLine($"  {item}");
             }
             Console.WriteLine();
+
+            //........................................... direct call 
             Console.WriteLine("Invoking Multicast Delegate:");
             rectDelegate(23.45, 67.89);
             //rectDelegate.Invoke(13.45, 76.89);
 
             Console.WriteLine();
             Console.WriteLine("Invoking Multicast Delegate After Removing one Pipeline:");
-            //Removing a method from delegate object
+
+            //........................................... Removing a method from delegate object
             rectDelegate -= rect.GetPerimeter;
             rectDelegate.Invoke(23.45, 67.89);
             Console.ReadKey();

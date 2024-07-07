@@ -28,6 +28,7 @@ namespace CSharpMisc
         public void Run()
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
+            
             //...........................................1. Add()
             dict.Add("a", "b");
             dict.Add("c", "d");
@@ -54,7 +55,7 @@ namespace CSharpMisc
             //dict.Remove("a"); // c,d is left 
 
 
-            //change the value
+            //........................................... change the value
             dict["a"] = "bb";
 
             //...........................................6. ContainsKey() and ConstainsValue()
