@@ -76,36 +76,39 @@ namespace CSharpMisc
                     Console.WriteLine("MULTIMAP: " + key + "=" + value);
                 }
             }
-
-            // Create second MultiMap.
-            var multiMap2 = new MultiMap<string>();
-            multiMap2.Add("animal", "cat");
-            multiMap2.Add("animal", "dog");
-            multiMap2.Add("human", "tom");
-            multiMap2.Add("human", "tim");
-            multiMap2.Add("mineral", "calcium");
-
-            foreach (string key in multiMap2.Keys)
-            {
-                foreach (string value in multiMap2[key])
-                {
-                    Console.WriteLine("MULTIMAP2: " + key + "=" + value);
-                }
-            }
-
             /*
-            
-                MULTIMAP: key2=False    
-                MULTIMAP: key1=True
-                MULTIMAP: key1=False
-                
-                MULTIMAP2: animal=cat
-                MULTIMAP2: animal=dog
-                MULTIMAP2: human=tom
-                MULTIMAP2: human=tim
-                MULTIMAP2: mineral=calcium
-             
+
+               MULTIMAP: key2=False    
+               MULTIMAP: key1=True
+               MULTIMAP: key1=False
             */
+
+
+           // Create second MultiMap.
+           var multiMap2 = new MultiMap<string>();
+           multiMap2.Add("animal", "cat");
+           multiMap2.Add("animal", "dog");
+           multiMap2.Add("human", "tom");
+           multiMap2.Add("human", "tim");
+           multiMap2.Add("mineral", "calcium");
+
+           foreach (string key in multiMap2.Keys)
+           {
+               foreach (string value in multiMap2[key])
+               {
+                   Console.WriteLine("MULTIMAP2: " + key + "=" + value);
+               }
+           }
+
+           /*
+
+               MULTIMAP2: animal=cat
+               MULTIMAP2: animal=dog
+               MULTIMAP2: human=tom
+               MULTIMAP2: human=tim
+               MULTIMAP2: mineral=calcium
+
+           */
         }
 
     }//end of class

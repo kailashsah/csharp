@@ -19,6 +19,8 @@ using System.Threading.Tasks;
 namespace CSharpMisc
 {
     public delegate void RectangleDelegate(double Width, double Height);
+
+
     public class Rectangle
     {
         public void GetArea(double Width, double Height)

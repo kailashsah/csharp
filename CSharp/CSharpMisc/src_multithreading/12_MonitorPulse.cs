@@ -33,11 +33,13 @@ namespace CSharpMisc
                 {
                     //Printing Even Number on Console)
                     Console.Write($"{i} ");
+                    
                     //Notify Odd thread that I'm done, you do your job
                     //It notifies a thread in the waiting queue of a change in the 
                     //locked object's state.
                     Monitor.Pulse(_lockMonitor);
-                    //I will wait here till Odd thread notify me 
+                    
+                    //I will wait here till Old thread notify me 
                     //Monitor.Wait(monitor);
                     //Without this logic application will wait forever
                     bool isLast = false;
@@ -99,6 +101,7 @@ namespace CSharpMisc
         {
             Thread EvenThread = new Thread(PrintEvenNumbers);
             Thread OddThread = new Thread(PrintOddNumbers);
+            
             //First Start the Even thread.
             EvenThread.Start();
             //Puase for 10 ms, to make sure Even thread has started 
@@ -106,6 +109,8 @@ namespace CSharpMisc
             Thread.Sleep(100);
             //Next, Start the Odd thread.
             OddThread.Start();
+            
+            
             //Wait for all the childs threads to complete
             OddThread.Join();
             EvenThread.Join();

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
     3. unnamed mutex -> similar to lock except locking scope is more and it's across AppDomain in a process.
 
         Named mutex -> locking scope is even more than unnamed mutex and it's across process in an operating system.
+
     4.
         Mutex is a cross process and there will be a classic example of not running more than one instance of an application.
 

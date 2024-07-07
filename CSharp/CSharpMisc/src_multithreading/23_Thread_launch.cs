@@ -36,8 +36,8 @@ namespace CSharpMisc
         {
             //An object that contains data for the thread procedure.
             Console.WriteLine("ThreadMethod :" + param);
-            Console.WriteLine($"ThreadMethod :{param}"); // ThreadMethod :param
-            Console.WriteLine(@"ThreadMethod :{param}"); // ThreadMethod :{param}
+            Console.WriteLine($"ThreadMethod :{param}"); // ThreadMethod :param . string interpolator
+            Console.WriteLine(@"ThreadMethod :{param}"); // ThreadMethod :{param} . verbatim string
         }
         public void RunV2()
         {
