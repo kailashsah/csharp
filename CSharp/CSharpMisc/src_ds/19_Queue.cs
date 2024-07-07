@@ -7,7 +7,9 @@ using System.Threading;
 using System.Threading.Tasks;
 
 /*
-    1. C# Queue<T> class is used to Enqueue and Dequeue elements. It uses the concept of Queue that arranges elements in FIFO (First In First Out) order. It can have duplicate elements. 
+    1. C# Queue<T> class is used to Enqueue and Dequeue elements. It uses the concept of Queue that arranges elements in FIFO (First In First Out) order. 
+
+    2. It can have duplicate elements. 
 */
 
 namespace CSharpMisc
