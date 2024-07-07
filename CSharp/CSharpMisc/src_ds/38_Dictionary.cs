@@ -28,12 +28,12 @@ namespace CSharpMisc
         public void Run()
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
-            //1. Add()
+            //...........................................1. Add()
             dict.Add("a", "b");
             dict.Add("c", "d");
 
-            //2. print
-            foreach(var ele in dict)
+            //...........................................2. print
+            foreach (var ele in dict)
             {
                 Console.WriteLine($"{ele.Key}, {ele.Value}");
             }
@@ -43,26 +43,31 @@ namespace CSharpMisc
                 Console.WriteLine($"{ele.Key}, {ele.Value}");
             }
 
-            //3. using index - access value
+            //...........................................3. using index - access value
             Console.WriteLine(dict["a"]); //b
                                           //Console.WriteLine(dict["d"]); //exception - The given key 'd' was not present in the dictionary.'
 
-            //4. remove all elements
+            //...........................................4. remove all elements
             //dict.Clear();
 
-            //5. remove single element
+            //...........................................5. remove single element
             //dict.Remove("a"); // c,d is left 
 
 
             //change the value
             dict["a"] = "bb";
 
-            //6. ContainsKey() and ConstainsValue()
+            //...........................................6. ContainsKey() and ConstainsValue()
             if (dict.ContainsKey("a"))
                 Console.WriteLine("a is present");
 
             if (dict.ContainsValue("b"))
                 Console.WriteLine("b as value is present");
+
+            //...........................................7. TryGetValue()
+            string val = "";
+            if (dict.TryGetValue("b", out val))
+                Console.WriteLine(val);
         }
 
         //static void Main(String[] args)
