@@ -68,10 +68,10 @@ namespace CSharpMisc
             //int[] ints = TwoSumOne(nums, target); // [0, 1]
             //int[] ints = ArraySort(nums);
 
-            //1. print the array
+            //........................................... 1. print the array
             Array.ForEach(ints, x => { Console.Write(x + " "); });
             Console.WriteLine();
-            //2.
+            //........................................... 2.
             ints.ToList().ForEach(i => Console.Write(i.ToString() + " "));
 
         }

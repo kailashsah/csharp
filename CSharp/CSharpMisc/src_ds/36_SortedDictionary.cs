@@ -16,7 +16,10 @@ using System.Threading.Tasks;
         The SortedDictionary<TKey, TValue> class is faster than SortedList<TKey, TValue> class if you perform insertion and removal for unsorted data.
     
     3. SortedDictionary<> implemented as Red-Black tree.
+        
+        DIFF-
         insertion deletion is O(log n)
+        
         SortedList - insertin deletion is O(n) . Supports index access .
 
 */

@@ -24,14 +24,14 @@ namespace CSharpMisc
 {
     public class MutexDisposeEx
     {
-        private static Mutex mutex = new Mutex();
+        private static Mutex mutex = new Mutex(); // <--
 
         // Method to implement syncronization using Mutex  
         static void MutexDemo()
         {
             // Wait until it is safe to enter, and do not enter if the request times out.
             Console.WriteLine(Thread.CurrentThread.Name + " Wants to Enter Critical Section for processing");
-            if (mutex.WaitOne(1000))
+            if (mutex.WaitOne(1000)) // <--
             {
                 try
                 {
@@ -43,7 +43,7 @@ namespace CSharpMisc
                 {
                     //Call the ReleaseMutex method to unblock so that other threads
                     //that are trying to gain ownership of the mutex can enter  
-                    mutex.ReleaseMutex();
+                    mutex.ReleaseMutex(); // <--
                     Console.WriteLine(Thread.CurrentThread.Name + " Has Released the mutex");
                 }
             }
@@ -55,7 +55,7 @@ namespace CSharpMisc
 
         ~MutexDisposeEx()
         {
-            mutex.Dispose();
+            mutex.Dispose(); // <--
         }
 
         public void Run()

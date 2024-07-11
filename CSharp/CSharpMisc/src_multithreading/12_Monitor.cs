@@ -42,7 +42,7 @@ namespace CSharpMisc
 
                 //...........................................3.
                 TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
-                Monitor.TryEnter(lockPrintNumberst, timeout, ref IsLockTaken);
+                Monitor.TryEnter(lockPrintNumberst, timeout, ref IsLockTaken); // <--
                 
                 
                 
@@ -62,7 +62,7 @@ namespace CSharpMisc
                 
                 if (IsLockTaken)
                 {
-                    Monitor.Exit(lockPrintNumberst);
+                    Monitor.Exit(lockPrintNumberst); // <--
                     Console.WriteLine(Thread.CurrentThread.Name + " Exit from critical section");
                 }
             }
