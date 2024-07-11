@@ -31,7 +31,7 @@ namespace CSharpMisc
                 Console.WriteLine(name);
             }
             //2.
-            Console.WriteLine( names.Contains("Ratan") );//True
+            Console.WriteLine(names.Contains("Ratan"));//True
 
             //3.
             Console.WriteLine("Peek element: " + names.Peek());
@@ -49,9 +49,28 @@ namespace CSharpMisc
              */
         }
 
+        public void RunDequeue()
+        {
+            Queue<string> names = new Queue<string>();
+            names.Enqueue("Sonoo");
+            names.Enqueue("Peter");
+            names.Enqueue("James");
+            names.Enqueue("Ratan");
+            names.Enqueue("Irfan");
+
+            //1.
+            while (names.Count > 0)
+            {
+                {
+                    Console.WriteLine(names.Dequeue()); // prints element one by one.
+                }
+            }
+        }
+
         //public static void Main(string[] args)
         //{
-        //    new QueueExample().Run();
+        //    //new QueueExample().Run();
+        //    new QueueExample().RunDequeue();
         //}
     }
 }
