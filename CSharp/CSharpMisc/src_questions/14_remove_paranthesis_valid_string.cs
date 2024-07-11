@@ -63,7 +63,7 @@ namespace CSharpMisc
             }
             while (st.Count > 0)
             {
-                sb.Remove(st.Pop(), 1); // left over ')' brackets, POP returns you position
+                sb.Remove(st.Pop(), 1); // left over ')' brackets, POP() returns you position
 
             }
 

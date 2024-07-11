@@ -28,10 +28,10 @@ namespace CSharpMisc
 
             try
             {
-                //1.
+                //...........................................1.
                 //Monitor.Enter(lockPrintNumberst);
 
-                //2.
+                //...........................................2.
                 //Monitor.Enter(lockPrintNumberst, ref IsLockTaken);
 
                 /*
@@ -40,7 +40,7 @@ namespace CSharpMisc
                  The output may vary on your machine. As you can see, all three threads try to acquire a lock on the object within 1 second. Two of the three threads acquire an exclusive lock on the object, while one is unable to acquire an exclusive lock, and hence, that thread will not enter the critical section.
                  */
 
-                //3.
+                //...........................................3.
                 TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
                 Monitor.TryEnter(lockPrintNumberst, timeout, ref IsLockTaken);
                 
