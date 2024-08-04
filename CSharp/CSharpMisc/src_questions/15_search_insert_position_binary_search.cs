@@ -31,26 +31,31 @@ namespace CSharpMisc
 {
     public class SearchInsertPosition
     {
+        /*
+            public int RecursiveApproach(int[] nums, int left, int right, int target);
+            public int IterativeApproach(int[] nums, int target);
+        */
+
         public int SearchInsert(int[] nums, int target)
         {
-            return BinarySearch(nums, 0, nums.Length-1, target);
+            return RecursiveApproach(nums, 0, nums.Length - 1, target);
         }
 
-        public int BinarySearch(int[] nums, int left, int right, int target)
+        public int RecursiveApproach(int[] nums, int left, int right, int target)
         {
             if (left > right)
                 return left; // If the search space is empty, return the insertion position
 
-            int mid  = (left + right) / 2;
+            int mid = (left + right) / 2;
             if (nums[mid] == target)
             {
                 return mid;
             }
 
             if (nums[mid] < target)
-                return BinarySearch(nums, mid+1, right, target); // Search right half
+                return RecursiveApproach(nums, mid + 1, right, target); // Search right half
             else //(nums[mid] > target)
-                return BinarySearch(nums, left, mid-1, target); // Search left half
+                return RecursiveApproach(nums, left, mid - 1, target); // Search left half
         }
 
 
@@ -74,7 +79,7 @@ namespace CSharpMisc
 
         public void Run()
         {
-            int[] nums = {1, 3, 5, 6};
+            int[] nums = { 1, 3, 5, 6 };
             Console.WriteLine(SearchInsert(nums, 5));//2
 
             Console.WriteLine(SearchInsert(nums, 2));//1
