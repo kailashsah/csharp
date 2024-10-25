@@ -39,7 +39,7 @@ namespace ECCurves
                 var iv = "00112233445566778899AABBCCDDEEFF00";
                 byte[] nonce = new byte[8];
                 byte[] bytes = Encoding.ASCII.GetBytes(iv); 
-                Array.Copy(bytes, nonce, 8); // here not using Convert.FromHexString(iv)
+                Array.Copy(bytes, nonce, 8); // here not using Convert.FromHexString(iv) 
 
                 var keyGen = GeneratorUtilities.GetKeyGenerator("AES128");
                 KeyParameter keyParam = new KeyParameter(keyGen.GenerateKey());
