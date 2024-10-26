@@ -5,7 +5,11 @@ using System.Text;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Modes;
 using Org.BouncyCastle.Crypto.Parameters;
-
+/*
+    1. Demo code showing how to use authentication encryption with AES-GCM. 
+        Sample uses the System.Security.Cryptography.AesGcm class found in .NET Core 3+ and also Bouncy Castle for legacy .NET usage.
+ 
+ */
 namespace AesGcmEncryption
 {
     public class Program
@@ -21,11 +25,14 @@ namespace AesGcmEncryption
 
             var (ciphertext, nonce, tag) = EncryptWithNet(plaintext, key);
             // var (ciphertext, nonce, tag) = EncryptWithBouncyCastle(plaintext, key);
+            //
             var decryptedPlaintext = DecryptWithNet(ciphertext, nonce, tag, key);
             // var decryptedPlaintext = DecryptWithBouncyCastle(ciphertext, nonce, tag, key);
             
-            if (decryptedPlaintext.Equals(plaintext)) Console.WriteLine("Decryption succesful!");
-            else Console.WriteLine("Error!");
+            if (decryptedPlaintext.Equals(plaintext)) 
+                Console.WriteLine("Decryption succesful!");
+            else 
+                Console.WriteLine("Error!");
         }
 
         private static (byte[] ciphertext, byte[] nonce, byte[] tag) EncryptWithNet(string plaintext, byte[] key)
